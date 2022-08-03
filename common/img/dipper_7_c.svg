@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" viewBox="0 0 217 320" style="enable-background:new 0 0 217 320;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;}
+	.st1{fill:url(#SVGID_1_);}
+	.st2{fill:#00CEBE;}
+</style>
+<polygon class="st0" points="0,31 0,263.8 158.7,31 "/>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-1034.9474" y1="-118.1109" x2="-1034.9474" y2="-117.1109" gradientTransform="matrix(256.5869 0 0 320.138 265771.1562 37811.7695)">
+	<stop  offset="0" style="stop-color:#00CEBE"/>
+	<stop  offset="1" style="stop-color:#015A89"/>
+</linearGradient>
+<polygon class="st1" points="217.4,0 217,0 217,0.5 "/>
+<polygon class="st2" points="217,0 0,0 0,31 158.7,31 0,263.8 0,318.8 217,0.5 "/>
+</svg>
