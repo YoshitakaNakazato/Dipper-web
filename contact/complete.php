@@ -1,18 +1,62 @@
 <?php
-
 session_start();
 
 mb_language("ja");
 mb_internal_encoding("utf-8");
 
+$Company = htmlspecialchars($_SESSION['Company']);
+$Name = htmlspecialchars($_SESSION['Name']);
+$Email = htmlspecialchars($_SESSION['Email']);
+$Department = htmlspecialchars($_SESSION['Department']);
+$type = $_SESSION['type'];
+$types = implode(" / ", $_SESSION['type']);
+$type_comment = htmlspecialchars($_SESSION['type_comment']);
+$reply = $_SESSION['reply'];
+$reply_comment = htmlspecialchars($_SESSION['reply_comment']);
+
 $title_user = 'この度はお問い合わせありがとうございます。';
 $body_user = <<< EOM
-
 {$Company}
 {$Name} 様
 
 お問い合わせありがとうございます。
 以下のお問い合わせ内容を、メールにて確認させていただきました。
+
+===================================================
+【 会社名 】
+   {$Company}
+
+【 お名前 】
+   {$Name}
+
+【 メールアドレス 】
+   {$Email}
+
+【 事業部 / 役職 】
+   {$Department}
+
+【 お問い合わせ内容 】
+{$types}
+{$type_comment}
+
+【 ご希望の回答方法 】
+{$reply}
+{$reply_comment}
+===================================================
+
+内容を確認のうえ、回答させて頂きます。
+しばらくお待ちください。
+EOM;
+$header_user = "From:" . mb_encode_mimeheader("株式会社Dam-Go") . "<info@dam-go.design>\n";
+$header_user .= 'X-Mailer: PHP/' . phpversion();
+mb_send_mail($Email, $title_user, $body_user, $header_user);
+
+
+$to_webmaster = 'dipper@dam-go.design';
+$title_webmaster = '【お問い合わせフォーム】';
+$body_webmaster = <<< EOM
+
+WEBサイトより以下のお問い合わせがありました。
 
 ===================================================
 【 会社名 】
@@ -35,49 +79,14 @@ $body_user = <<< EOM
 {$reply}
 {$reply_comment}
 ===================================================
-
-内容を確認のうえ、回答させて頂きます。
-しばらくお待ちください。
 EOM;
-$header_user = "From:" . mb_encode_mimeheader("株式会社Dam-Go") . "<info@dam-go.design>\n";
-$header_user .= 'X-Mailer: PHP/' . phpversion();
-mb_send_mail($Email, $title_user, $body_user, $header_user);
-
-
-$to_webmaster = '●●●●●●●●●@dam-go.design';
-$title_webmaster = '【お問い合わせフォーム】';
-$body_webmaster = <<< EOM
-
-WEBサイトより以下のお問い合わせがありました。
-
-===================================================
-【 会社名 】
-{$Company}
-
-【 お名前 】
-{$Name}
-
-【 メールアドレス 】
-{$Email}
-
-【 事業部 / 役職 】
-{$Department}
-
-【 お問い合わせ内容 】
-{$checkboxArray}
-{$type_comment}
-
-【 ご希望の回答方法 】
-{$reply}
-{$reply_comment}
-===================================================
-EOM;
-$header_webmaster = "From:" . mb_encode_mimeheader($_SESSION['Name']) . "<" . $_SESSION['Email'] . ">\n";
+$header_webmaster = "From:" . mb_encode_mimeheader($Name) . "<" . $Email . ">\n";
 $header_webmaster .= 'X-Mailer: PHP/' . phpversion();
 mb_send_mail($to_webmaster, $title_webmaster, $body_webmaster, $header_webmaster);
 
 session_destroy();
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -86,7 +95,7 @@ session_destroy();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="email=no,telephone=no,address=no">
-    <title>Dipper</title>
+    <title>お問い合わせ | Dipper</title>
     <meta name="description" content="業務システムに特化した世界に一つだけのデザインテンプレート制作。雛形となる7つのデザインを制作するだけで、操作性と生産性が向上。企業のDX推進にさらに大きな付加価値を。">
 
     <meta name="robots" content="index,follow">

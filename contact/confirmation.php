@@ -1,18 +1,16 @@
 <?php
-
 session_start();
-
 if (!$_POST) {
-    header('Location: ./index.php');
+    header('Location: ././index.php');
 }
 
 $_SESSION = $_POST;
+
 $Company = htmlspecialchars($_SESSION['Company']);
 $Name = htmlspecialchars($_SESSION['Name']);
 $Email = htmlspecialchars($_SESSION['Email']);
 $Department = htmlspecialchars($_SESSION['Department']);
 $type = $_SESSION['type'];
-$types = implode(" / ", $_SESSION['type']);
 $type_comment = htmlspecialchars($_SESSION['type_comment']);
 $reply = $_SESSION['reply'];
 $reply_comment = htmlspecialchars($_SESSION['reply_comment']);
@@ -27,7 +25,7 @@ $reply_comment = htmlspecialchars($_SESSION['reply_comment']);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="email=no,telephone=no,address=no">
-    <title>Dipper</title>
+    <title>お問い合わせ | Dipper</title>
     <meta name="description" content="業務システムに特化した世界に一つだけのデザインテンプレート制作。雛形となる7つのデザインを制作するだけで、操作性と生産性が向上。企業のDX推進にさらに大きな付加価値を。">
 
     <meta name="robots" content="index,follow">

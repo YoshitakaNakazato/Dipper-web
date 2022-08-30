@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -7,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="email=no,telephone=no,address=no">
-    <title>Dipper</title>
+    <title>お問い合わせ | Dipper</title>
     <meta name="description" content="業務システムに特化した世界に一つだけのデザインテンプレート制作。雛形となる7つのデザインを制作するだけで、操作性と生産性が向上。企業のDX推進にさらに大きな付加価値を。">
 
     <meta name="robots" content="index,follow">
@@ -73,25 +72,25 @@
                     <div class="form-item">
                         <label>
                             <div class="form__subject">会社名<span>*</span></div>
-                            <input name="Company" placeholder="株式会社 ホウジンメイ" type="text" autocomplete="organization" required >
+                            <input name="Company" placeholder="株式会社 ホウジンメイ" type="text" autocomplete="organization" required>
                         </label>
                     </div>
                     <div class="form-item">
                         <label>
                             <div class="form__subject">お名前<span>*</span></div>
-                            <input name="Name" placeholder="山田 太郎" type="text" autocomplete="name" required >
+                            <input name="Name" placeholder="山田 太郎" type="text" autocomplete="name" required>
                         </label>
                     </div>
                     <div class="form-item">
                         <label>
                             <div class="form__subject">Email<span>*</span></div>
-                            <input name="Email" placeholder="abcdefg@hijklmn.com" type="email" autocomplete="email" required >
+                            <input name="Email" placeholder="abcdefg@hijklmn.com" type="email" autocomplete="email" required>
                         </label>
                     </div>
                     <div class="form-item">
                         <label>
                             <div class="form__subject">事業部 / 役職</div>
-                            <input name="Department" placeholder="営業部 部長" type="text" autocomplete="organization-title" >
+                            <input name="Department" placeholder="営業部 部長" type="text" autocomplete="organization-title">
                         </label>
                     </div>
                     <div class="form-item">
